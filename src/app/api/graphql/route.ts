@@ -1,3 +1,5 @@
+import { db } from "@/db/connection";
+import { usersTable } from "@/db/schema";
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { gql } from "graphql-tag";
@@ -8,6 +10,7 @@ const typeDefs = gql`
         id: ID!
         name: String!
         email: String!
+        age: Int
     }
 
     type Query {
@@ -19,31 +22,12 @@ const typeDefs = gql`
 // Define your resolvers
 const resolvers = {
     Query: {
-        users: () => {
-            return [
-                {
-                    id: "1",
-                    name: "John Doe",
-                    email: "sample@gmail.com",
-                },
-                {
-                    id: "2",
-                    name: "John Doe 2",
-                    email: "sample@gmail.com",
-                },
-                {
-                    id: "3",
-                    name: "John Doe 3",
-                    email: "sample@gmail.com",
-                },
-                {
-                    id: "4",
-                    name: "John Doe 4",
-                    email: "sample@gmail.com",
-                },
-            ];
+        users: async () => {
+            const data = await db.select().from(usersTable);
+            console.log(data);
+            return data;
         },
-        user: (_: any, args: { id: string }) => {
+        user: (_: unknown, args: { id: string }) => {
             if (args.id === "1") {
                 return {
                     id: "1",
