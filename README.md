@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img src="https://github.com/user-attachments/assets/be7a89b6-cadb-4b97-90b8-7d6c0524b933" alt="drawing" width="300" />
 
-## Getting Started
+Aurora Tales is an innovative platform that transforms user-provided keywords or phrases into captivating stories using the power of AI. The platform is designed to inspire creativity, entertain users, and provide a unique storytelling experience. By inputting 4–5 words, users can generate fully-fledged stories tailored to their preferences, complete with engaging plots, relatable characters, and vivid settings.
 
-First, run the development server:
+## Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Keyword-Based Story Generation:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Users input 4–5 words (e.g., "forest, dragon, treasure, hero").
+    The AI crafts a story that incorporates these words seamlessly into the narrative.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Customizable Story Styles:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    Users can choose from fantasy, sci-fi, mystery, or romance genres.
+    The AI adjusts tone and complexity based on user preferences (e.g., child-friendly, adventurous, or poetic).
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+AI-Enhanced Creativity:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The AI suggests related keywords or themes to spark additional inspiration.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Technologies Used
+- Next.js: For building a responsive and user-friendly front-end interface.
+- GraphQL: For managing keywords, user preferences, and story metadata.
+- Firebase: For user authentication, real-time story refinement, and data storage.
+- AI: For generating stories, refining content, and ensuring seamless integration of user-provided keywords.
