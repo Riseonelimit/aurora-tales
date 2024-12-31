@@ -2,6 +2,7 @@
 
 import AuthButtons from "@/components/AuthButtons";
 import OAuthProvider from "@/providers/OAuthProvider";
+import PromptContextProvider from "@/providers/PromptContextProvider";
 import { ApolloProvider } from "@apollo/client";
 import { Inter } from "next/font/google";
 import Image from "next/image";
@@ -24,28 +25,30 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} dark relative antialiased`}>
         <OAuthProvider>
-          <ApolloProvider client={client}>
-            <nav className="flex items-center justify-between px-4">
-              <Link href={"/"} className="w-20">
-                <Image
-                  src={logo}
-                  alt="aurora_tales_logo"
-                  className="h-full w-full object-cover"
-                />
-              </Link>
-              <ul className="flex items-center justify-center space-x-4 px-4 text-sm">
-                <li>
-                  <Link href="/generate">Generate</Link>
-                </li>
-                <li>
-                  <AuthButtons />
-                </li>
-              </ul>
-            </nav>
-            <section className="flex w-full flex-col items-center justify-center">
-              {children}
-            </section>
-          </ApolloProvider>
+          <PromptContextProvider>
+            <ApolloProvider client={client}>
+              <nav className="flex items-center justify-between px-4">
+                <Link href={"/"} className="w-20">
+                  <Image
+                    src={logo}
+                    alt="aurora_tales_logo"
+                    className="h-full w-full object-cover"
+                  />
+                </Link>
+                <ul className="flex items-center justify-center space-x-4 px-4 text-sm">
+                  <li>
+                    <Link href="/generate">Generate</Link>
+                  </li>
+                  <li>
+                    <AuthButtons />
+                  </li>
+                </ul>
+              </nav>
+              <section className="flex w-full flex-col items-center justify-center">
+                {children}
+              </section>
+            </ApolloProvider>
+          </PromptContextProvider>
         </OAuthProvider>
       </body>
     </html>
