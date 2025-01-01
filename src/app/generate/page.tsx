@@ -37,12 +37,12 @@ const page = () => {
 
   return (
     <div className="flex w-[90%] flex-col items-center justify-start gap-10 border-red-600 p-2 lg:w-2/4">
-      <h1 className="self-start text-3xl font-semibold">
+      <h1 className="self-start text-2xl font-semibold lg:text-3xl">
         Create your own story ✨
       </h1>
       <div className="flex w-full flex-col items-center justify-start gap-10">
         <div className="flex w-full flex-col items-center justify-center gap-5">
-          <h1 className="self-start text-xl font-semibold">
+          <h1 className="self-start font-semibold lg:text-xl">
             Add Keywords (Press Enter After typing a word)
           </h1>
 
@@ -92,7 +92,7 @@ const page = () => {
         </div>
 
         <div className="flex w-full flex-col items-center justify-center gap-3">
-          <h1 className="self-start text-xl font-semibold">Select Genre</h1>
+          <h1 className="self-start font-semibold lg:text-xl">Select Genre</h1>
           <div className="flex w-full flex-wrap items-center justify-start gap-2">
             {genres.length > 0 &&
               genres.map((keyword, index) => (
@@ -117,7 +117,9 @@ const page = () => {
           </div>
         </div>
         <div className="w-full flex-col">
-          <h1 className="self-start text-xl font-semibold">Additional Notes</h1>
+          <h1 className="self-start font-semibold lg:text-xl">
+            Additional Notes
+          </h1>
           <Textarea
             onChange={(e) => setAdditionalInfo(e.target.value)}
             value={additionalInfo ?? ""}

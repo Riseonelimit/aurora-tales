@@ -8,7 +8,7 @@ export default function Home() {
   const { user } = useOAuthContext();
   return (
     <div className="mt-[13%] flex w-3/4 flex-col items-center justify-center gap-5 lg:w-full">
-      <h1 className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lime-200 via-cyan-500 to-violet-300 bg-clip-text text-6xl font-bold text-transparent">
+      <h1 className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lime-200 via-cyan-500 to-violet-300 bg-clip-text text-center text-6xl font-bold text-transparent">
         Aurora Tales
       </h1>
       <p className="text-center text-sm text-white/70">

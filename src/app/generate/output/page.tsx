@@ -50,7 +50,7 @@ const page = () => {
     );
   }
   return (
-    <div className="mt-10 flex w-2/4 flex-col items-center justify-start gap-2">
+    <div className="mt-10 flex w-[85%] flex-col items-center justify-start gap-2 lg:w-2/4">
       <div className="flex w-full flex-col items-start justify-center gap-3">
         <div className="text-dm rounded-md border-[1px] border-rose-600 bg-rose-950 p-2 text-sm font-medium">
           {genre}
