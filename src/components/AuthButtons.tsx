@@ -1,5 +1,4 @@
 import { useOAuthContext } from "@/hooks/useOAuthContext";
-import React from "react";
 import BiGoogle from "./icons/BiGoogle";
 import { Button } from "./ui/button";
 
@@ -9,7 +8,9 @@ const AuthButtons = () => {
   if (!user)
     return (
       <Button
-        onClick={OAuthLogin}
+        onClick={() => {
+          OAuthLogin();
+        }}
         className="flex items-center justify-center gap-2 font-semibold"
       >
         <BiGoogle /> Login

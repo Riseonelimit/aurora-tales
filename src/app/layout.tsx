@@ -28,13 +28,19 @@ export default function RootLayout({
           <PromptContextProvider>
             <ApolloProvider client={client}>
               <nav className="flex items-center justify-between px-4">
-                <Link href={"/"} className="w-20">
-                  <Image
-                    src={logo}
-                    alt="aurora_tales_logo"
-                    className="h-full w-full object-cover"
-                  />
-                </Link>
+                <div className="flex items-center justify-center gap-2">
+                  <Link href={"/"} className="w-20">
+                    <Image
+                      src={logo}
+                      alt="aurora_tales_logo"
+                      className="h-full w-full object-cover"
+                    />
+                  </Link>
+
+                  <p className="flex items-center justify-center gap-2 rounded-md border-[1px] border-yellow-400 bg-yellow-950/30 p-2 text-xs font-medium">
+                    ⚠️ Under Development
+                  </p>
+                </div>
                 <ul className="flex items-center justify-center space-x-4 px-4 text-sm">
                   <li>
                     <Link href="/generate">Generate</Link>

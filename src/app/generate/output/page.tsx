@@ -21,15 +21,19 @@ const page = () => {
   });
 
   useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
     if (genre && keywords.length > 0) {
       const generateResponse = async () => {
         const prompt = getPromptInput(keywords, genre!, additionalInfo);
         setProgress(60);
-        console.log(prompt);
-
+        timeout = setTimeout(() => {
+          setProgress(80);
+        }, 1000);
         const response = JSON.parse(await generateContent(prompt));
-        setResponse(response);
         console.log(response);
+        setResponse(response);
+
         setIsLoading(false);
         setProgress(100);
       };
@@ -37,6 +41,10 @@ const page = () => {
     } else {
       redirect("/generate");
     }
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [additionalInfo, genre, keywords]);
 
   if (isLoading) {

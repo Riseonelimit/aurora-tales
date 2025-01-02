@@ -11,12 +11,12 @@ const schema = {
       title: {
         type: SchemaType.STRING,
         nullable: false,
-        description: "Title of the generated story",
+        description: "Title",
       },
       story: {
         type: SchemaType.STRING,
         nullable: false,
-        description: "Generated story",
+        description: "Story",
       },
     },
   },

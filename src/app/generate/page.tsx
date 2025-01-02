@@ -37,13 +37,13 @@ const page = () => {
 
   return (
     <div className="flex w-[90%] flex-col items-center justify-start gap-10 border-red-600 p-2 lg:w-2/4">
-      <h1 className="self-start text-2xl font-semibold lg:text-3xl">
+      <h1 className="self-start bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lime-200 via-cyan-500 to-violet-300 bg-clip-text text-center text-4xl font-bold text-transparent lg:text-left lg:text-3xl">
         Create your own story ✨
       </h1>
       <div className="flex w-full flex-col items-center justify-start gap-10">
         <div className="flex w-full flex-col items-center justify-center gap-5">
-          <h1 className="self-start font-semibold lg:text-xl">
-            Add Keywords (Press Enter After typing a word)
+          <h1 className="lg:text-md self-start bg-gradient-to-bl from-cyan-500 via-green-200 to-cyan-400 bg-clip-text font-bold text-transparent">
+            Add Keywords
           </h1>
 
           <div className="flex w-full gap-3">
@@ -57,7 +57,7 @@ const page = () => {
                 }
               }}
               placeholder="eg: Adventure, Mystery, Love"
-              className="border-gray-500"
+              className="border-gray-600"
             />
             <Button
               onClick={() => {
@@ -92,7 +92,9 @@ const page = () => {
         </div>
 
         <div className="flex w-full flex-col items-center justify-center gap-3">
-          <h1 className="self-start font-semibold lg:text-xl">Select Genre</h1>
+          <h1 className="lg:text-md self-start bg-gradient-to-bl from-cyan-500 via-green-200 to-cyan-400 bg-clip-text font-bold text-transparent">
+            Select Genre
+          </h1>
           <div className="flex w-full flex-wrap items-center justify-start gap-2">
             {genres.length > 0 &&
               genres.map((keyword, index) => (
@@ -105,9 +107,10 @@ const page = () => {
                     setGenre(keyword);
                   }}
                   className={cn(
-                    "flex cursor-pointer items-center justify-between gap-2 rounded-md border-[1px] p-2 text-xs font-semibold dark:border-rose-400",
+                    "flex cursor-pointer items-center justify-between gap-2 rounded-md border-[1px] border-gray-600 p-2 text-xs font-semibold",
                     {
-                      "bg-rose-400 text-rose-950": genre === keyword,
+                      "bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-800 via-cyan-600 to-violet-900":
+                        genre === keyword,
                     },
                   )}
                 >
@@ -117,7 +120,7 @@ const page = () => {
           </div>
         </div>
         <div className="w-full flex-col">
-          <h1 className="self-start font-semibold lg:text-xl">
+          <h1 className="lg:text-md self-start bg-gradient-to-bl from-cyan-500 via-green-200 to-cyan-400 bg-clip-text font-bold text-transparent">
             Additional Notes
           </h1>
           <Textarea
@@ -125,7 +128,7 @@ const page = () => {
             value={additionalInfo ?? ""}
             rows={6}
             placeholder="eg: Use Simple Language, Add a Twist at the end"
-            className="border-gray-500"
+            className="border-gray-600"
           />
         </div>
         <Button onClick={handleGenerate} className="font-semibold">

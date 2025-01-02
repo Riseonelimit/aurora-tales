@@ -35,10 +35,10 @@ const OAuthProvider = ({ children }: { children: ReactNode }) => {
     setIsLoading(false);
   };
 
-  const OAuthLogin = () => {
+  const OAuthLogin = async () => {
     setIsLoading(true);
     if (user) return;
-    supabase.auth.signInWithOAuth({
+    await supabase.auth.signInWithOAuth({
       provider: "google",
     });
     setIsLoading(false);
